@@ -1,0 +1,67 @@
+<header
+    class="sticky top-0 z-40 w-full flex-none lg:border-b lg:border-gray-900/10 dark:border-gray-50/[0.06] bg-white dark:bg-gray-800">
+    <div class="max-w-8xl mx-auto">
+        <div class="py-4 border-b border-slate-900/10 lg:px-8 lg:border-0 dark:border-slate-300/10 mx-4 lg:mx-0">
+            <div class="relative flex items-center">
+                <a class="mr-3 flex-none overflow-hidden md:w-auto" href="/">
+                    <span class="sr-only">{{ .Site.Title }}</span>{{ .Site.Title }}
+                </a>
+                <div class="relative flex  ml-auto">
+                    <nav
+                        class="hidden lg:flex items-center text-sm leading-6 font-semibold text-gray-700 dark:text-gray-200">
+                        <ul class="flex space-x-8">
+                            {{ $currentPage := . }}
+                            {{ range .Site.Menus.pages }}
+                            <li>
+                                <a href="{{ .URL | relLangURL }}" class="hover:text-sky-500 dark:hover:text-sky-400">{{ .Name }}</a>
+                            </li>
+                            {{ end -}}
+                        </ul>
+                    </nav>
+                    <div class="flex items-center lg:border-l border-gray-200 ml-6 pl-6 dark:border-gray-800">
+                        <button type="button" id="theme-toggle">
+                            <span class="dark:hidden hover:text-sky-500"><svg viewBox="0 0 24 24" width="24"
+                                    height="24" class="w-5 h-5" stroke="currentColor" stroke-width="2" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg></span>
+                            <span class="hidden dark:inline hover:text-sky-400"><svg viewBox="0 0 24 24" width="24"
+                                    height="24" class="w-5 h-5" stroke="currentColor" stroke-width="2" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg></span>
+                        </button>
+                        <a href="" class="ml-6 block hover:text-sky-500 dark:hover:text-sky-400"><svg
+                                viewBox="0 0 24 24" width="24" height="24" class="w-5 h-5" stroke="currentColor"
+                                stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                                class="css-i6dzq1">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center p-4 border-b border-slate-900/10 lg:hidden dark:border-slate-50/[0.06]">
+            <button id="menu-toggle" type="button"
+                class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                <span class="sr-only">Navigation</span><svg viewBox="0 0 24 24" width="20" height="20"
+                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" class="css-i6dzq1">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
