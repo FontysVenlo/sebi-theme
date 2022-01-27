@@ -8,6 +8,12 @@
         max-width: 90rem;
     }
 
+    .max-w-half {
+        max-width: 50%;
+    }
+}
+
+@layer components {
     .sectlevel1 {
         @apply space-y-6 lg:space-y-2 border-l border-gray-100 dark:border-gray-700 text-sm;
 
@@ -21,6 +27,24 @@
 
         a {
             @apply pl-8 text-slate-600 hover:text-slate-800 dark:text-slate-500 dark:hover:text-slate-400;
+        }
+    }
+
+    .imageblock {
+        @apply px-4 my-2;
+        &.thumb{
+            @apply lg:max-w-md md:max-w-sm sm:max-w-full;
+        }
+
+        .content{
+
+            img {
+                @apply my-1 shadow-md dark:shadow-slate-900;
+            }
+        }
+
+        .title {
+            @apply text-center text-sky-600;
         }
     }
 }
