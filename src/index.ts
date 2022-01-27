@@ -1,5 +1,3 @@
-import './css/main.css';
-
 enum Theme {
     Light = "Light",
     Dark = "Dark"
@@ -48,7 +46,7 @@ const checkTOC = () => {
     }
     toc.firstElementChild?.remove();
     const tocHeader = document.querySelector("#toc-header");
-    tocHeader?.append(toc);
+    tocHeader?.after(toc);
 }
 
 if(!!menuToggle && !!menu && !!menuBackdrop){
