@@ -38,17 +38,6 @@ const toggleTheme = () => {
     setTheme();
 };
 
-const checkTOC = () => {
-    const mainContent = document.querySelector("#main-content");
-    const toc = mainContent?.querySelector("#toc");
-    if(!toc){
-        return;
-    }
-    toc.firstElementChild?.remove();
-    const tocHeader = document.querySelector("#toc-header");
-    tocHeader?.after(toc);
-}
-
 if(!!menuToggle && !!menu && !!menuBackdrop){
     menuToggle.addEventListener('click', () => toggleMenu(menu, menuBackdrop));
 }
@@ -56,4 +45,3 @@ if(!!menuToggle && !!menu && !!menuBackdrop){
 themeToggle?.addEventListener('click', toggleTheme);
 
 getTheme();
-checkTOC();

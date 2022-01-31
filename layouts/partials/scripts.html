@@ -1,10 +1,15 @@
-<script src="/js/main.js"></script>
+{{ $main := resources.Get "js/main.ts" | js.Build -}}
 {{ $highlight := resources.Get "js/highlight.js" | js.Build -}}
-{{ .Site.Params.highlight }}
 {{ if eq (hugo.Environment) "development" -}}
-    <script src="{{ $highlight.RelPermalink }}" defer></script>
-{{ else -}}
+    <script src="{{ $main.RelPermalink }}"></script>
     {{ if .Site.Params.highlight -}}
         <script src="{{ $highlight.RelPermalink }}" defer></script>
+    {{ end -}}
+{{ else -}}
+    {{ if .Site.Params.highlight -}}
+        {{ $main := $main | minify | fingerprint "sha512" -}}
+        {{ $highlight := $highlight | minify | fingerprint "sha512" -}}
+        <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" crossorigin="anonymous"></script>
+        <script src="{{ $highlight.RelPermalink }}" integrity="{{ $highlight.Data.Integrity }}" crossorigin="anonymous" defer></script>
     {{ end -}}
 {{ end -}}
