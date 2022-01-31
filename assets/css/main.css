@@ -3,6 +3,18 @@
 @tailwind utilities;
 @tailwind variants;
 
+.highlight:hover .code-copy {
+    display: block;
+}
+
+.hljs {
+    background-color: transparent !important;
+}
+
+.highlight {
+    position: relative;
+}
+
 @layer utilities {
     .max-w-8xl {
         max-width: 90rem;
@@ -49,5 +61,9 @@
         .title {
             @apply text-center text-sky-600;
         }
+    }
+
+    .code-copy {
+        @apply absolute top-3 right-3 text-gray-600 hover:text-gray-300 dark:text-gray-500 dark:hover:text-gray-200 hidden;
     }
 }
