@@ -1,0 +1,10 @@
+<script src="/js/main.js"></script>
+{{ $highlight := resources.Get "js/highlight.js" | js.Build -}}
+{{ .Site.Params.highlight }}
+{{ if eq (hugo.Environment) "development" -}}
+    <script src="{{ $highlight.RelPermalink }}" defer></script>
+{{ else -}}
+    {{ if .Site.Params.highlight -}}
+        <script src="{{ $highlight.RelPermalink }}" defer></script>
+    {{ end -}}
+{{ end -}}
