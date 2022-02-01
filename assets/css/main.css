@@ -35,6 +35,10 @@
     .right {
         @apply float-right;
     }
+
+    .left {
+        @apply float-left;
+    }
 }
 
 @layer components {
