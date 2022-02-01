@@ -13,6 +13,7 @@ hljs.registerLanguage('json', json);
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('html', xml);
 hljs.registerLanguage('java', java);
+hljs.registerLanguage('xml', xml);
 
 // Find the alert element on the page
 const alert = document.querySelector("#copied-alert");
