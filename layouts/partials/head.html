@@ -3,4 +3,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     {{- partial "stylesheets.html" . -}}
+    {{ $dm := resources.Get "js/init-darkmode.js" | js.Build -}}
+    {{ if eq (hugo.Environment) "development" -}}
+        <script src="{{ $dm.RelPermalink }}"></script>
+    {{ else -}}
+        {{ $dm := $dm | minify | fingerprint "sha512" -}}
+        <script src="{{ $dm.RelPermalink }}" integrity="{{ $dm.Data.Integrity }}" crossorigin="anonymous"></script>
+    {{ end -}}
 </head>
