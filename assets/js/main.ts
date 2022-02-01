@@ -40,6 +40,7 @@ const toggleTheme = () => {
 
 if(!!menuToggle && !!menu && !!menuBackdrop){
     menuToggle.addEventListener('click', () => toggleMenu(menu, menuBackdrop));
+    menuBackdrop?.addEventListener('click', () => toggleMenu(menu, menuBackdrop));
 }
 
 themeToggle?.addEventListener('click', toggleTheme);
