@@ -23,6 +23,14 @@
     .max-w-half {
         max-width: 50%;
     }
+
+    .red {
+        @apply text-red-500;
+    }
+
+    .blue {
+        @apply text-blue-700 dark:text-sky-400;
+    }
 }
 
 @layer components {
@@ -64,6 +72,40 @@
     }
 
     .code-copy {
-        @apply absolute top-3 right-3 text-gray-600 hover:text-gray-300 dark:text-gray-500 dark:hover:text-gray-200 hidden;
+        @apply absolute top-3 right-3 text-gray-600 dark:text-gray-500 hidden;
+    }
+
+    .admonitionblock {
+        @apply border-l-4 border rounded-md border-gray-300 dark:border-gray-600 my-6;
+
+        table {
+            @apply my-0;
+
+            .icon {
+                @apply hidden;
+            }
+
+            .content {
+                @apply px-6;
+            }
+        }
+    }
+
+    .admonitionblock.note {
+        @apply border-l-cyan-600 ;
+    }
+
+    .admonitionblock.tip {
+        @apply border-l-green-600;
+    }
+
+    .admonitionblock.warning {
+        @apply border-l-orange-600;
+    }
+
+    .colist {
+        li p{
+            @apply my-1;
+        }
     }
 }
