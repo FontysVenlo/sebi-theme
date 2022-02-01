@@ -116,4 +116,8 @@
             @apply my-1;
         }
     }
+
+    .videoblock {
+        @apply w-full aspect-video;
+    }
 }
