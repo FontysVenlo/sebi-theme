@@ -39,6 +39,27 @@
     .left {
         @apply float-left;
     }
+
+    .prose :where(code):not(:where([class~="not-prose"] *))::before {
+        content: '';
+    }
+
+    .prose :where(code):not(:where([class~="not-prose"] *))::after {
+        content: '';
+    }
+
+    .prose :where(code):not(:where([class~="not-prose"] *)) {
+        @apply bg-gray-300 dark:bg-gray-900 dark:text-gray-300 text-gray-800 py-1 px-2 rounded font-normal;
+    }
+
+    .listingblock {
+
+        .title + .content {
+            pre {
+                @apply mt-2;
+            }
+        }
+    }
 }
 
 @layer components {
