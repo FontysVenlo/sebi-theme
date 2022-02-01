@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-  content: ["./layouts/**/*.{html,js}", "./public/**/*.html", "./assets/**/*.js"],
+  content: [path.resolve(__dirname, 'layouts/**/*.{html,js}'), "./public/**/*.html", "./assets/**/*.js"],
   safelist: [
     'code-copy'
   ],
