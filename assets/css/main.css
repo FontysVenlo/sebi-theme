@@ -89,7 +89,7 @@
         table {
             @apply my-0;
 
-            .icon {
+            td.icon {
                 @apply hidden;
             }
 

@@ -8,6 +8,11 @@
         {{ $highlight := resources.Get "css/highlight.scss" | toCSS $options }}
         <link rel="stylesheet" href="{{ $highlight.Permalink }}">
     {{ end -}}
+    {{ if .Site.Params.fontawesome -}}
+        {{ $options := (dict "includePaths" (slice "node_modules")) }}
+        {{ $fa := resources.Get "css/fontawesome.scss" | toCSS $options }}
+        <link rel="stylesheet" href="{{ $fa.Permalink }}">
+    {{ end -}}
 {{ else -}}
     {{ $secureStyle := $style | minify | resources.Fingerprint "sha512" -}}
     <link rel="stylesheet" href="{{ $secureStyle.Permalink }}" integrity="{{ $secureStyle.Data.Integrity }}" crossorigin="anonymous">
@@ -16,5 +21,11 @@
         {{ $highlight := resources.Get "css/highlight.scss" | toCSS $options }}
         {{ $secureHighlight := $highlight | resources.Fingerprint "sha512" -}}
         <link rel="stylesheet" href="{{ $secureHighlight.Permalink }}" integrity="{{ $secureHighlight.Data.Integrity }}" crossorigin="anonymous">
+    {{ end -}}
+    {{ if .Site.Params.fontawesome -}}
+        {{ $options := (dict "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
+        {{ $fa := resources.Get "css/fontawesome.scss" | toCSS $options }}
+        {{ $fa := $fa | resources.Fingerprint "sha512" -}}
+        <link rel="stylesheet" href="{{ $fa.Permalink }}" integrity="{{ $fa.Data.Integrity }}" crossorigin="anonymous">
     {{ end -}}
 {{ end -}}
