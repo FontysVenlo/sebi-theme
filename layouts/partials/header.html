@@ -13,7 +13,7 @@
                             {{ $currentPage := . }}
                             {{ range .Site.Menus.pages }}
                             <li>
-                                <a href="{{ .URL | relLangURL }}" class="hover:text-sky-500 dark:hover:text-sky-400">{{ .Name }}</a>
+                                <a href="{{ .URL | absURL }}" class="hover:text-sky-500 dark:hover:text-sky-400">{{ .Name }}</a>
                             </li>
                             {{ end -}}
                         </ul>
