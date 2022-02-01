@@ -111,13 +111,15 @@
         @apply border-l-orange-600;
     }
 
-    .colist {
+    .colist,
+    .olist,
+    .ulist {
         li p{
             @apply my-1;
         }
     }
 
-    .videoblock {
+    .videoblock iframe{
         @apply w-full aspect-video;
     }
 }
