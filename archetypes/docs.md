@@ -3,7 +3,6 @@ title: "{{ replace .Name "-" " " | title }}"
 description: ""
 slug: ""
 date: {{ .Date }}
-lastmod: {{ .Date }}
 draft: true
 images: []
 menu: 
