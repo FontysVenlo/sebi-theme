@@ -106,14 +106,14 @@
     }
 
     .admonition-block {
-        @apply border-l-4 border rounded-md border-gray-300 dark:border-gray-600 my-6 px-3;
+        @apply border-l-4 border rounded-md border-gray-300 dark:border-gray-600 my-6 px-5;
 
         .title-label {
             @apply hidden;
         }
 
         .block-title {
-            @apply mt-3 font-bold;
+            @apply mt-3 font-bold dark:text-gray-200;
         }
     }
 
