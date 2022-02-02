@@ -34,6 +34,11 @@ const toggleTheme = () => {
     setTheme();
 };
 
+const applyInvertOnSVG = () => {
+    document.querySelectorAll("img[src$=svg]")
+        .forEach(image => image.classList.add("dark:invert"));
+};
+
 if(!!menuToggle && !!menu && !!menuBackdrop){
     menuToggle.addEventListener('click', () => toggleMenu(menu, menuBackdrop));
     menuBackdrop?.addEventListener('click', () => toggleMenu(menu, menuBackdrop));
@@ -42,3 +47,4 @@ if(!!menuToggle && !!menu && !!menuBackdrop){
 themeToggle?.addEventListener('click', toggleTheme);
 
 getTheme();
+applyInvertOnSVG();
