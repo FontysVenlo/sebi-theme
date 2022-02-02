@@ -149,7 +149,7 @@
         }
     }
 
-    .videoblock iframe{
+    .video-block iframe{
         @apply w-full aspect-video;
     }
 
