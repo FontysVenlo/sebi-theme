@@ -35,7 +35,7 @@ const toggleTheme = () => {
 };
 
 const applyInvertOnSVG = () => {
-    document.querySelectorAll("img[src$=svg]")
+    document.querySelectorAll("img[src$=svg]:not(.icon)")
         .forEach(image => {
             const parent = document.createElement("div");
             // image used following classes shadow-md dark:shadow-slate-900 mx-auto my-3
