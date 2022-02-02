@@ -103,7 +103,7 @@
     }
 
     .admonitionblock {
-        @apply border-l-4 border rounded-md border-gray-300 dark:border-gray-600 my-6;
+        @apply border-l-4 border rounded-md border-gray-300 dark:border-gray-600 my-6 overflow-x-auto;
 
         table {
             @apply my-0;
@@ -132,6 +132,10 @@
 
     .admonitionblock.warning {
         @apply border-l-orange-600;
+    }
+
+    .admonitionblock.caution {
+        @apply border-l-red-600;
     }
 
     .colist,
