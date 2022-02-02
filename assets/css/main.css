@@ -51,6 +51,12 @@
     .prose :where(code):not(:where([class~="not-prose"] *)) {
         @apply bg-gray-300 dark:bg-gray-900 dark:text-gray-300 text-gray-800 py-1 px-2 rounded font-normal;
     }
+
+    .sect1 + #footnotes {
+        hr {
+            @apply hidden;
+        }
+    }
 }
 
 @layer components {
@@ -74,15 +80,16 @@
     }
 
     .imageblock {
-        @apply px-4 my-2;
+        @apply px-4 my-2 flex justify-center flex-col;
         &.thumb{
             @apply lg:max-w-md md:max-w-sm sm:max-w-full;
         }
 
         .content{
+            @apply my-1 shadow-md dark:shadow-slate-900 mx-auto;
 
             img {
-                @apply my-1 shadow-md dark:shadow-slate-900 mx-auto;
+                @apply m-0;
             }
         }
 
