@@ -1,12 +1,13 @@
+const menuToggle = document.querySelector("button#menu-toggle");
+const menu = document.querySelector("#menu");
+const menuBackdrop = document.querySelector("#menu-backdrop");
+const themeToggle = document.querySelector("#theme-toggle");
+
 enum Theme {
     Light = "Light",
     Dark = "Dark"
 }
 
-const menuToggle = document.querySelector("button#menu-toggle");
-const menu = document.querySelector("#menu");
-const menuBackdrop = document.querySelector("#menu-backdrop");
-const themeToggle = document.querySelector("#theme-toggle");
 let theme = Theme.Light;
 
 const toggleMenu = (menu: Element, menuBackdrop: Element) => {
@@ -15,12 +16,7 @@ const toggleMenu = (menu: Element, menuBackdrop: Element) => {
 };
 
 const getTheme = () => {
-    const currentTheme = localStorage.getItem("theme");
-    if ((!!currentTheme && Theme[currentTheme as keyof typeof Theme] === Theme.Dark) || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        theme = Theme.Dark;        
-    } else {
-        theme = Theme.Light;
-    }
+    theme = document.documentElement.classList.contains("dark") ? Theme.Dark : Theme.Light;
     setTheme();
 };
 
