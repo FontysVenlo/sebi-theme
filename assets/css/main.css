@@ -119,6 +119,10 @@
         .block-title {
             @apply mt-3 font-bold dark:text-gray-200;
         }
+
+        img.thumb {
+            @apply m-0;
+        }
     }
 
     .admonition-block.note {
