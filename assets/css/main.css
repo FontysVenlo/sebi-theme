@@ -61,6 +61,18 @@
             @apply hidden;
         }
     }
+
+    .thumb {
+        @apply my-2 shadow-md dark:shadow-slate-900;
+
+        &.left {
+            @apply mr-3;
+        }
+
+        &.right {
+            @apply ml-3;
+        }
+    }
 }
 
 @layer components {
@@ -120,8 +132,8 @@
             @apply mt-3 font-bold dark:text-gray-200;
         }
 
-        img.thumb {
-            @apply m-0;
+        .thumb {
+            @apply m-0 shadow-none;
         }
     }
 
