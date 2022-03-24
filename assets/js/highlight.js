@@ -4,6 +4,7 @@ import json from 'highlight.js/lib/languages/json';
 import bash from 'highlight.js/lib/languages/bash';
 import xml from 'highlight.js/lib/languages/xml';
 import java from 'highlight.js/lib/languages/java';
+import sql from 'highlight.js/lib/languages/sql';
 
 import Clipboard from 'clipboard';
 
@@ -14,6 +15,7 @@ hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('html', xml);
 hljs.registerLanguage('java', java);
 hljs.registerLanguage('xml', xml);
+hljs.registerLanguage('sql', sql);
 
 // Find the alert element on the page
 const alert = document.querySelector("#copied-alert");
