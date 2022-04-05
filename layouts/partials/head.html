@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }}</title>
+    <title>{{ .Site.Title }}{{ if .Title }} - {{ .Title }}{{ end }}</title>
     {{- partial "stylesheets.html" . -}}
     {{ $dm := resources.Get "js/init-darkmode.js" | js.Build -}}
     {{ if eq (hugo.Environment) "development" -}}
@@ -10,6 +10,7 @@
         {{ $dm := $dm | minify | fingerprint "sha512" -}}
         <script src="{{ $dm.RelPermalink }}" integrity="{{ $dm.Data.Integrity }}" crossorigin="anonymous"></script>
     {{ end -}}
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}favicon-16x16.png">
 </head>
