@@ -111,12 +111,12 @@ pre.highlight  code{
         > img {
             @apply shadow-md dark:shadow-slate-900 mx-auto my-3;
         }
+    }
 
-        .svg-wrapper {
+    .svg-wrapper {
 
-            img {
-                @apply m-0;
-            }            
+        img {
+            @apply m-0;
         }
     }
 
