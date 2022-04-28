@@ -39,7 +39,7 @@ const applyInvertOnSVG = () => {
         .forEach(image => {
             const parent = document.createElement("div");
             // image used following classes shadow-md dark:shadow-slate-900 mx-auto my-3
-            parent.classList.add("svg-wrapper", "shadow-md", "dark:shadow-slate-900", "mx-auto", "my-3");
+            parent.classList.add("svg-wrapper", "flex", "justify-center", "my-3");
             image.parentNode?.insertBefore(parent, image);
             image.classList.add("dark:invert", "shadow-none");
             parent.appendChild(image);

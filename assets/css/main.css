@@ -113,7 +113,6 @@ pre.highlight  code{
         }
 
         .svg-wrapper {
-            @apply inline-block;
 
             img {
                 @apply m-0;
