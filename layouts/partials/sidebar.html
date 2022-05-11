@@ -19,10 +19,17 @@
             <li class="mt-12 lg:mt-8">
                 <h5 class="mb-8 lg:mb-3 font-semibold text-slate-900 dark:text-slate-200">Weeks</h5>
                 <ul class="space-y-2 border-l border-gray-100 dark:border-gray-700">
+                    {{ $currentPage := . }}
                     {{ range $index, $element := .Site.Menus.docs -}}
                         <li>
                             <a href="{{ .URL | absURL }}"
-                                class="block border-l pl-4 -ml-px border-transparent hover:border-slate-400 dark:hover:border-slate-500 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300">
+                                class="block border-l pl-4 -ml-px 
+                                    {{if or ($currentPage.IsMenuCurrent "docs" .) ($currentPage.HasMenuCurrent "docs" .) }}
+                                        border-slate-500 dark:border-slate-400 text-black dark:text-slate-200
+                                    {{else}}
+                                        border-transparent hover:border-slate-400 dark:hover:border-slate-400 text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200
+                                    {{end}}
+                                ">
                                 {{ .Name }}
                             </a>
                         </li>
