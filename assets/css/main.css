@@ -105,11 +105,15 @@ pre.highlight  code{
         @apply px-4 my-2 text-center;
 
         &.thumb{
-            @apply lg:max-w-md md:max-w-sm sm:max-w-full;
+            @apply lg:max-w-md md:max-w-sm sm:max-w-full shadow-none;
         }
 
-        > img {
+        img {
             @apply shadow-md dark:shadow-slate-900 mx-auto my-3;
+        }
+
+        img[src$=svg] {
+            @apply shadow-none;
         }
     }
 
