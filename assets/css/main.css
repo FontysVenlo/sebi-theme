@@ -117,6 +117,10 @@ pre.highlight  code{
         }
     }
 
+    .table-block {
+        @apply max-w-full overflow-x-auto;
+    }
+
     .svg-wrapper {
 
         img {
