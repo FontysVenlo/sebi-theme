@@ -5,12 +5,12 @@ on:
   pull_request:
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup Hugo
