@@ -1,5 +1,5 @@
 {{ $css := resources.Get "css/main.css" }}
-{{ $style := $css | resources.PostCSS (dict "config" "./postcss.config.js")}}
+{{ $style := $css | css.PostCSS (dict "config" "./postcss.config.js")}}
 
 {{ if eq (hugo.Environment) "development" -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
